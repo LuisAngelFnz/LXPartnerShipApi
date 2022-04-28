@@ -24,6 +24,15 @@ describe('Test Suite for Reader', ()=>{
         expect(success).toBe(false);
 
         expect(data_explorers).toBe('Ruta no encontrada');
+    });
+
+    test('3. Method readJsonFile path is not file', ()=>{
+        let [success, data_explorers] = Reader.readJsonFile('/tmp/');
+
+        expect(success).toBe(false);
+
+       expect(data_explorers).toBe('Ruta no es archivo'); 
 
     });
+
 });
