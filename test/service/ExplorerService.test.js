@@ -32,5 +32,6 @@ describe('Test Suite for class ExplorerService', ()=>{
 
         result = ExplorerService.explorersInNode();
         expect(result).not.toBeUndefined();
+        expect(result).toEqual([]);
     });
 });

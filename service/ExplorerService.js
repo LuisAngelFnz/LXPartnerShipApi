@@ -7,6 +7,10 @@ class ExplorerService{
         }
         return Reader.readJsonFile(path);
     }
+
+    static explorersInNode(all_explorers){
+        if([undefined,null].includes(all_explorers)) return [];        
+    }
 }
 
 module.exports = ExplorerService;
