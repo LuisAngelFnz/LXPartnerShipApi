@@ -9,7 +9,11 @@ class ExplorerService{
     }
 
     static explorersInNode(all_explorers){
-        if([undefined,null].includes(all_explorers)) return [];        
+        if([undefined,null].includes(all_explorers)) return [];
+
+        return all_explorers.filter((each_explorer)=>{
+            return each_explorer.mission == 'node';
+        });
     }
 }
 
