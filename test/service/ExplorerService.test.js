@@ -25,17 +25,17 @@ describe('Test Suite for class ExplorerService', ()=>{
         expect(all_explorers).not.toBeUndefined();
     });
 
-    test('3.- Method explorersInNode, pass args null and undefined',()=>{
+    test('3.- Method filterByMission, pass args null and undefined',()=>{
 
-        let result = ExplorerService.explorersInNode(null);
+        let result = ExplorerService.filterByMission(null, null);
         expect(result).not.toBeUndefined();
 
-        result = ExplorerService.explorersInNode();
+        result = ExplorerService.filterByMission();
         expect(result).not.toBeUndefined();
         expect(result).toEqual([]);
     });
 
-    test('4.- Method explorersInNode, filter explorers', ()=>{
+    test('4.- Method filterByMission, filter explorers', ()=>{
 
         const all_explorers = [
             {
@@ -48,7 +48,7 @@ describe('Test Suite for class ExplorerService', ()=>{
             }
         ]
 
-        let result = ExplorerService.explorersInNode(all_explorers);
+        let result = ExplorerService.filterByMission(all_explorers, 'node');
 
         expect(result.length).toBe(1);
         expect(result[0].mission).toBe('node');

@@ -1,18 +1,25 @@
 const Reader = require('../lib/utils/Reader');
 
 class ExplorerService{
+
+    static paramInvalid(param){
+        return [undefined,null].includes(param)
+    }
+
     static getExplorers(path){
-        if([undefined,null].includes(path)){
+        if(this.paramInvalid(path)){
             path = 'explorers.json'
         }
         return Reader.readJsonFile(path);
     }
 
-    static explorersInNode(all_explorers){
-        if([undefined,null].includes(all_explorers)) return [];
+    static filterByMission(all_explorers, mission){
+        if(this.paramInvalid(all_explorers) || this.paramInvalid(mission)){
+            return [];
+        }
 
         return all_explorers.filter((each_explorer)=>{
-            return each_explorer.mission == 'node';
+            return each_explorer.mission == mission;
         });
     }
 }
