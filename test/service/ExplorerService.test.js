@@ -59,5 +59,38 @@ describe('Test Suite for class ExplorerService', ()=>{
         let result = ExplorerService.getAmountOfExplorersByMission();
 
         expect(result).toBe(0);
+
+        const all_explorers = ExplorerService.getExplorers();
+
+        result = ExplorerService.getAmountOfExplorersByMission(all_explorers);
+        
+        expect(result).toBe(0);        
+    }); 
+
+    test('6.- Method getAmountOfExplorersByMission, pass params OK', ()=>{
+
+        const all_explorers = [
+            {
+                "githubUsername" : "ajolonauta2",
+                "mission"        : "java",
+            },
+            {
+                "githubUsername" : "ajolonauta1",
+                "mission"        : "node",
+            },
+            {
+                "githubUsername" : "ajolonauta1",
+                "mission"        : "node",
+            }
+        ];
+
+        let result = ExplorerService.getAmountOfExplorersByMission(all_explorers, 'unknow');
+        expect(result).toBe(0);
+
+        result = ExplorerService.getAmountOfExplorersByMission(all_explorers, 'java');
+        expect(result).toBe(1);
+
+        result = ExplorerService.getAmountOfExplorersByMission(all_explorers, 'node');
+        expect(result).toBe(2);
     });
 });
