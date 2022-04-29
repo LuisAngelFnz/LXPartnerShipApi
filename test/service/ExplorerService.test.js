@@ -93,4 +93,14 @@ describe('Test Suite for class ExplorerService', ()=>{
         result = ExplorerService.getAmountOfExplorersByMission(all_explorers, 'node');
         expect(result).toBe(2);
     });
+
+    test('7.- Method getExplorersUsernamesByMission, pass args null and undefined', ()=>{
+
+        let result = ExplorerService.getExplorersUsernamesByMission();
+        expect(result).toBe(0);
+
+        result = ExplorerService.getExplorersUsernamesByMission(null, undefined);
+        expect(result).toBe(0);
+
+    });
 });
