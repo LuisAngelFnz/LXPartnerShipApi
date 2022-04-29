@@ -24,4 +24,13 @@ describe('Test Suite for class ExplorerService', ()=>{
         expect(success).toBe(true);
         expect(all_explorers).not.toBeUndefined();
     });
+
+    test('3.- Method explorersInNode, pass args null and undefined',()=>{
+
+        let result = ExplorerService.explorersInNode(null);
+        expect(result).not.toBeUndefined();
+
+        result = ExplorerService.explorersInNode();
+        expect(result).not.toBeUndefined();
+    });
 });
