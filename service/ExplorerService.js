@@ -22,6 +22,10 @@ class ExplorerService{
             return each_explorer.mission == mission;
         });
     }
+
+    static getAmountOfExplorersByMission(all_explorers, mission){
+        return this.filterByMission(all_explorers, mission).length
+    }
 }
 
 module.exports = ExplorerService;
