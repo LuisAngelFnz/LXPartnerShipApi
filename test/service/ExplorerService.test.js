@@ -53,4 +53,11 @@ describe('Test Suite for class ExplorerService', ()=>{
         expect(result.length).toBe(1);
         expect(result[0].mission).toBe('node');
     });
+
+    test('5.- Method getAmountOfExplorersByMission, pass args null and undefined', ()=>{
+
+        let result = ExplorerService.getAmountOfExplorersByMission();
+
+        expect(result).toBe(0);
+    });
 });
