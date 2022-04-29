@@ -34,4 +34,23 @@ describe('Test Suite for class ExplorerService', ()=>{
         expect(result).not.toBeUndefined();
         expect(result).toEqual([]);
     });
+
+    test('4.- Method explorersInNode, filter explorers', ()=>{
+
+        const all_explorers = [
+            {
+                "githubUsername" : "ajolonauta2",
+                "mission"        : "java",
+            },
+            {
+                "githubUsername" : "ajolonauta1",
+                "mission"        : "node",
+            }
+        ]
+
+        let result = ExplorerService.explorersInNode(all_explorers);
+
+        expect(result.length).toBe(1);
+        expect(result[0].mission).toBe('node');
+    });
 });
