@@ -24,7 +24,13 @@ class ExplorerService{
     }
 
     static getAmountOfExplorersByMission(all_explorers, mission){
-        return this.filterByMission(all_explorers, mission).length
+        return this.filterByMission(all_explorers, mission).length;
+    }
+
+    static getExplorersUsernamesByMission(all_explorers, mission){
+        return this.filterByMission(all_explorers, mission).map((each_explorer)=>{
+            return each_explorer.name;
+        })
     }
 }
 
