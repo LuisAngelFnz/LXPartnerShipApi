@@ -97,10 +97,39 @@ describe('Test Suite for class ExplorerService', ()=>{
     test('7.- Method getExplorersUsernamesByMission, pass args null and undefined', ()=>{
 
         let result = ExplorerService.getExplorersUsernamesByMission();
-        expect(result).toBe(0);
+        expect(result).toEqual([]);
 
         result = ExplorerService.getExplorersUsernamesByMission(null, undefined);
-        expect(result).toBe(0);
+        expect(result).toEqual(result);
 
+    });
+
+    test('8.- Method getExplorersUsernamesByMission, pass params OK',()=>{
+        let all_explorers = [
+            {
+                "githubUsername" : "ajolonauta1",
+                "mission"        : "java",
+                "name"           : "Woopa1",
+            },
+            {
+                "githubUsername" : "ajolonauta2",
+                "mission"        : "node",
+                "name"           : "Woopa2",
+            },
+            {
+                "githubUsername" : "ajolonauta3",
+                "mission"        : "java",
+                "name"           : "Woopa3",
+            }
+        ];
+
+        let result = ExplorerService.getExplorersUsernamesByMission(all_explorers, 'node');
+        expect(result.length).toBe(1);
+        expect(result).toContain('Woopa2');
+
+        result = ExplorerService.getExplorersUsernamesByMission(all_explorers, 'java');
+        expect(result.length).toBe(2);
+        expect(result).toContain('Woopa1');
+        expect(result).toContain('Woopa3');
     });
 });
