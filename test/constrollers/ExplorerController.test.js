@@ -25,5 +25,11 @@ describe('Test suit for class ExplorerController',() => {
 
         result = ExplorerController.getExplorersAmonutByMission(undefined);
         expect(result).toStrictEqual(0);
-    })
+    });
+
+    test('4.- Method getExplorersAmonutByMission, pass param OK', () => {
+        let result = ExplorerController.getExplorersAmonutByMission('node');
+        expect(result).not.toBeUndefined();
+        expect(result > 0).toBe(true); //Comment if not exists explorer
+    });
 });
