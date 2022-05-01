@@ -1,4 +1,4 @@
-const ExplorerService = require('../../lib/service/ExplorerService');
+const ExplorerService = require('../../lib/services/ExplorerService');
 
 describe('Test Suite for class ExplorerService', ()=>{
 
