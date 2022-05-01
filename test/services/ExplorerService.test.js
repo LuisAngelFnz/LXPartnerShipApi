@@ -8,7 +8,7 @@ describe('Test Suite for class ExplorerService', ()=>{
         expect(all_explorers).not.toBeUndefined();
 
         [success,all_explorers] = ExplorerService.getExplorers();
-        expect(success).toBe(true);
+        expect(success).toBe(false);
         expect(all_explorers).not.toBeUndefined();
     });
 
