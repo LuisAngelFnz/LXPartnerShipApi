@@ -32,4 +32,14 @@ describe('Test Suite for class FizzbuzzService',()=>{
         FizzbuzzService.applyValidationInExplorer(explorer);
         expect(explorer.trick).toBe(2);
     });
+
+    test('3.- Method applyValidationInNumber, pass para null and undefined', () => {
+        let result = FizzbuzzService.applyValidationInNumber(null);
+        
+        expect(result).toBe('Parametro invalido');
+
+        result = FizzbuzzService.applyValidationInNumber(undefined);
+        expect(result).toBe('Parametro invalido');
+
+    });
 });
