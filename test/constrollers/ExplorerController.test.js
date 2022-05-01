@@ -42,4 +42,14 @@ describe('Test suit for class ExplorerController',() => {
         expect(result).not.toBeUndefined();
         expect(result).toEqual([]);
     });
+
+    test('6.- Method getExplorersUsernamesByMission, pass params OK', () => {
+        let result = ExplorerController.getExplorersUsernamesByMission('node');
+        expect(result).not.toBeUndefined();
+        expect(result.length > 0).toBe(true);
+
+        result = ExplorerController.getExplorersUsernamesByMission('java');
+        expect(result).not.toBeUndefined();
+        expect(result.length > 0).toBe(true);
+    });
 });
