@@ -32,4 +32,14 @@ describe('Test suit for class ExplorerController',() => {
         expect(result).not.toBeUndefined();
         expect(result > 0).toBe(true); //Comment if not exists explorer
     });
+
+    test('5.- Method getExplorersUsernamesByMission, pass param mission null and undefined', () => {
+        let result = ExplorerController.getExplorersUsernamesByMission(null);
+        expect(result).not.toBeUndefined();
+        expect(result).toEqual([]);
+
+        result = ExplorerController.getExplorersUsernamesByMission(null);
+        expect(result).not.toBeUndefined();
+        expect(result).toEqual([]);
+    });
 });
