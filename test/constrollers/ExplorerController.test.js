@@ -21,11 +21,9 @@ describe('Test suit for class ExplorerController',() => {
     test('3.- Method getExplorersAmonutByMission, pass param mission null and undefined', () => {
 
         let result = ExplorerController.getExplorersAmonutByMission(null);
-        expect(result).toBeNaN();
-        expect(result).toBe(0);
+        expect(result).toStrictEqual(0);
 
         result = ExplorerController.getExplorersAmonutByMission(undefined);
-        expect(result).toBeNaN();
-        expect(result).toBe(0);
+        expect(result).toStrictEqual(0);
     })
 });
