@@ -1,4 +1,4 @@
-const ExplorerService = require('../../service/ExplorerService');
+const ExplorerService = require('../../lib/service/ExplorerService');
 
 describe('Test Suite for class ExplorerService', ()=>{
 
@@ -101,7 +101,6 @@ describe('Test Suite for class ExplorerService', ()=>{
 
         result = ExplorerService.getExplorersUsernamesByMission(null, undefined);
         expect(result).toEqual(result);
-
     });
 
     test('8.- Method getExplorersUsernamesByMission, pass params OK',()=>{
