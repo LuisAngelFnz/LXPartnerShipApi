@@ -3,13 +3,15 @@ const FizzbuzzService = require('../../lib/services/FizzbuzzService');
 describe('Test Suite for class FizzbuzzService',()=>{
     test('1.- Method applyValidationInExplorer, pass param null and undefined',()=>{
         
-        let result = FizzbuzzService.applyValidationInExplorer(null);
-        expect(result).toEqual({});
+        let callback = ()=>{
+            FizzbuzzService.applyValidationInExplorer(null)
+        };
+        expect(callback).toThrow(TypeError);
 
-        result = FizzbuzzService.applyValidationInExplorer(undefined);
-        expect(result).toEqual({});
-        expect(result.trick).toBeUndefined();
-
+        callback = ()=>{
+            FizzbuzzService.applyValidationInExplorer(undefined);
+        }
+        expect(callback).toThrow(TypeError)
     });
 
     test('2.- Method applyValidationInExplorer, pass params OK',()=>{
@@ -19,15 +21,15 @@ describe('Test Suite for class FizzbuzzService',()=>{
         expect(result.trick).toBe('FIZZ');
 
         explorer = {'score':5};
-        result = FizzbuzzService.applyValidationInExplorer(explorer);
-        expect(result.trick).toBe('BUZZ');
+        FizzbuzzService.applyValidationInExplorer(explorer);
+        expect(explorer.trick).toBe('BUZZ');
 
         explorer = {'score':15};
-        result = FizzbuzzService.applyValidationInExplorer(explorer);
-        expect(result.trick).toBe('FIZZBUZZ');
+        FizzbuzzService.applyValidationInExplorer(explorer);
+        expect(explorer.trick).toBe('FIZZBUZZ');
 
-        explorer = {'score':3};
-        result = FizzbuzzService.applyValidationInExplorer(explorer);
-        expect(result.trick).toBe(3);
+        explorer = {'score':2};
+        FizzbuzzService.applyValidationInExplorer(explorer);
+        expect(explorer.trick).toBe(2);
     });
 });
