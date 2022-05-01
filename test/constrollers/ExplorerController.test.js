@@ -52,4 +52,15 @@ describe('Test suit for class ExplorerController',() => {
         expect(result).not.toBeUndefined();
         expect(result.length > 0).toBe(true);
     });
+
+    test('7.- Method applyScoreValidationInNumber, pass param null and undefined', () => {
+        let result = ExplorerController.applyScoreValidationInNumber(null);
+        
+        expect(result).toBe('Parametro invalido');
+
+        result = ExplorerController.applyScoreValidationInNumber(undefined);
+        expect(result).toBe('Parametro invalido');
+
+
+    });
 });
