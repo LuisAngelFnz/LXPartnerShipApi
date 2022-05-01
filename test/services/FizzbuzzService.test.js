@@ -42,4 +42,19 @@ describe('Test Suite for class FizzbuzzService',()=>{
         expect(result).toBe('Parametro invalido');
 
     });
+
+    test('4.- Method applyValidationInNumber, pass OK', () => {
+        let score  = 3;
+        let result = FizzbuzzService.applyValidationInNumber(score);
+        
+        expect(result).toBe('FIZZ');
+
+        score  = 5;
+        result = FizzbuzzService.applyValidationInNumber(score);
+        expect(result).toBe('BUZZ');
+
+        score  = 15;
+        result = FizzbuzzService.applyValidationInNumber(score);
+        expect(result).toBe('FIZZBUZZ');
+    });
 });
