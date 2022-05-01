@@ -60,7 +60,20 @@ describe('Test suit for class ExplorerController',() => {
 
         result = ExplorerController.applyScoreValidationInNumber(undefined);
         expect(result).toBe('Parametro invalido');
+    });
 
+    test('8.- Method applyScoreValidationInNumber, pass param OK', () => {
+        let score  = 3;
+        let result = ExplorerController.applyScoreValidationInNumber(score);
+        
+        expect(result).toBe('FIZZ');
 
+        score  = 5;
+        result = ExplorerController.applyScoreValidationInNumber(score);
+        expect(result).toBe('BUZZ');
+
+        score  = 15;
+        result = ExplorerController.applyScoreValidationInNumber(score);
+        expect(result).toBe('FIZZBUZZ');
     });
 });
