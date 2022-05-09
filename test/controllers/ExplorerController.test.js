@@ -76,4 +76,32 @@ describe('Test suit for class ExplorerController',() => {
         result = ExplorerController.applyScoreValidationInNumber(score);
         expect(result).toBe('FIZZBUZZ');
     });
+
+    test('9.- Method telegramScoreValidationInNumber, pass params null and undefined', () => {
+
+        let result = ExplorerController.telegramScoreValidationInNumber(null);
+        expect(result).toBe('Envía un número válido');
+
+        result = ExplorerController.telegramScoreValidationInNumber(undefined);
+        expect(result).toBe('Envía un número válido');        
+    });
+
+    test('10.- Method telegramScoreValidationInNumber, pass params OK', () => {
+        let input_number = 2;
+
+        let result = ExplorerController.telegramScoreValidationInNumber(input_number);
+        expect(result).toBe(`Tu número es: ${input_number}. Validación: ${input_number}`);
+
+        input_number = 3;
+        result = ExplorerController.telegramScoreValidationInNumber(input_number);
+        expect(result).toBe(`Tu número es: ${input_number}. Validación: FIZZ`);
+
+        input_number = 5;
+        result = ExplorerController.telegramScoreValidationInNumber(input_number);
+        expect(result).toBe(`Tu número es: ${input_number}. Validación: BUZZ`);
+
+        input_number = 15;
+        result = ExplorerController.telegramScoreValidationInNumber(input_number);
+        expect(result).toBe(`Tu número es: ${input_number}. Validación: BUZZ`);        
+    });
 });
