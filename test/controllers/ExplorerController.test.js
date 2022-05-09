@@ -102,6 +102,6 @@ describe('Test suit for class ExplorerController',() => {
 
         input_number = 15;
         result = ExplorerController.telegramScoreValidationInNumber(input_number);
-        expect(result).toBe(`Tu número es: ${input_number}. Validación: BUZZ`);        
+        expect(result).toBe(`Tu número es: ${input_number}. Validación: FIZZBUZZ`);        
     });
 });
